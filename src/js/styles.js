@@ -1,1 +1,5 @@
-require('../scss/main.scss');
+
+import $ from 'jquery';
+require('bootstrap');
+
+import '../scss/main.scss';

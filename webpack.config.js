@@ -21,6 +21,7 @@ module.exports = {
     filename: 'bundle.js'
   },
   watch: false,
+  devtool: 'source-map',
 
   module: {
     rules: [
@@ -49,26 +50,30 @@ module.exports = {
         ],
       },
       {
-        test:/\.(s)css$/,
+        test:/\.scss$/,
         use:[
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
               hmr: process.env.NODE_ENV === 'development',
               reloadAll: true, 
+              minimize: true,
+              sourceMap: true
             },
           },
           'css-loader',
           //'postcss-loader',
           'sass-loader',
         ],
-        // test: /\.(woff|woff2|eot|ttf)$/,
-        // include: library,
-        // use: 'url-loader', 
 
-
-        // test: /\.(png|woff|woff2|eot|ttf)$/, 
-        // use: 'url-loader?limit=100000'
+      },
+      {
+        test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'url-loader',
+        query: {
+          limit: 10000,
+          mimetype: 'application/font-woff'
+        }
       },
       {
         test: /\.(svg|png|jpeg|jpg)$/, 
@@ -76,7 +81,7 @@ module.exports = {
       },
 
     ],
-  },    
+  },  
   plugins: [
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
@@ -87,11 +92,17 @@ module.exports = {
     }),
     new CleanWebpackPlugin(),
     new WebpackNotifierPlugin(),
+    new webpack.ProvidePlugin({
+        $: 'jquery',
+        jQuery: 'jquery',
+        'window.jQuery': 'jquery',
+        Popper: ['popper.js', 'default'],            
+      })
   ],
+  
+  resolve: {
+    extensions: ['.js', '.scss']
+  },
 
-  // Default mode for Webpack is production.
-  // Depending on mode Webpack will apply different things
-  // on final bundle. For now we don't need production's JavaScript 
-  // minifying and other thing so let's set mode to development
   mode: 'development'
 };
