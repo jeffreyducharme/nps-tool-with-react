@@ -1,0 +1,1 @@
+npm install --save-dev  webpack css-loader style-loader sass-loader url-loader file-loader mini-css-extract-plugin webpack-notifier clean-webpack-plugin
