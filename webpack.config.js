@@ -3,7 +3,7 @@ const path = require('path');
 const webpack = require('webpack'); // to access built-in plugins
 const src = path.resolve(__dirname, './src/');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const WebpackNotifierPlugin = require('webpack-notifier');
+const WebpackBuildNotifierPlugin = require('webpack-build-notifier');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 
@@ -91,7 +91,12 @@ module.exports = {
       ignoreOrder: false, // Enable to remove warnings about conflicting order
     }),
     new CleanWebpackPlugin(),
-    new WebpackNotifierPlugin(),
+    new WebpackBuildNotifierPlugin({
+      sound: 'Funk',
+      successSound: false,
+      suppressSuccess: true,
+      activateTerminalOnError: true,
+    }),
     new webpack.ProvidePlugin({
         $: 'jquery',
         jQuery: 'jquery',

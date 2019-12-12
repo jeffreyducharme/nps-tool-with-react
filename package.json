@@ -5,7 +5,8 @@
   "main": "webpack.config.js",
   "dependencies": {
     "babel-loader": "^8.0.6",
-    "bootstrap": "^4.4.1"
+    "bootstrap": "^4.4.1",
+    "webpack-build-notifier": "^2.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.7.5",
