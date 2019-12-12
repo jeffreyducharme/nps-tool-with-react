@@ -1,22 +1,32 @@
+@import "./media-queries.scss";
+
+$darkGray: #474645;
+$mediumGray: #BEBEB8;
+$lightGray: #FAFAF8;
+$lightGreen: #a1b800;
+$darkGreen: #728200;
+$red: #E43200; 
+$lightRed: #F3DAD1;
+
+@font-face {
+	font-family: "Proxima Nova";
+	src: url('../fonts/Proxima-Nova-Regular.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+html {
+	font-size: 16px;
+}
+
 body {
 
-	@font-face {
-		font-family: "Proxima Nova";
-		src: url('../fonts/Proxima-Nova-Regular.woff') format('woff');
-		font-weight: normal;
-		font-style: normal;
-	}
+	font-family: 'Proxima Nova', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	color: $darkGray; 
+	background-color: $lightGray;
 
 
-
-	$darkGray: #474645;
-	$lighterGray: #FAFAF8;
-	$lightGreen: #a1b800;
-	$darkGreen: #728200;
-
-	background-color: $lighterGray;
-
-	.container {
+	.container-fluid {
 		margin-top: 100px;
 	}
 
@@ -25,35 +35,205 @@ body {
 	}
 
 	.grid-flex {
-		display: flex;
+		display: grid;
+		grid-template-columns: repeat(12, 1fr);
+		margin: 0 auto;
+		grid-template-rows: auto;
+		max-width: 80%;
 
-		.grid-item:nth-child(1n) {
-			max-width: 175px;
+		.grid-item:nth-child(1) {
+			max-width: 140px;
 			margin: 0 20px;
+		}
+
+		.grid-item {
+			margin-right: 10px;
+		}
+	}
+
+	.row {
+		margin: 20px 0; 
+
+		&.row-one {
+			.grid-flex {
+				grid-template-areas: "item-1 item-1 item-2 item-2 item-3 item-3 item-4 item-4 item-4 item-4 item-4 item-4";
+
+				.grid-item.item-1 {
+					grid-area: item-1;
+				}
+				.grid-item.item-2 {
+					grid-area: item-2;
+				}
+				.grid-item.item-3 {
+					grid-area: item-3;
+				}
+				.grid-item.item-4 {
+					grid-area: item-4;
+				}
+				.calc-container {
+					padding: 0 20px 30px;
+				}
+			}
+		}
+
+		&.row-two {
+			margin: 20px 0 90px;
+
+			.grid-flex {
+				grid-template-areas: "item-1 item-1 item-2 item-2 item-3 item-3 . . item-4 item-4 . .";
+
+				.grid-item.item-1 {
+					grid-area: item-1;
+				}
+				.grid-item.item-2 {
+					margin: 0 auto;
+				    position: relative;
+				    left: -5px;
+					grid-area: item-2;
+				}
+				.grid-item.item-3 {
+					margin: 0 auto;
+				    position: relative;
+				    left: -5px;
+					grid-area: item-3;
+				}
+				.grid-item.item-4 {
+					margin: 0 auto;
+				    position: relative;
+				    left: -5px;
+					grid-area: item-4;
+				}
+				.calc-container {
+					padding: 0 20px 30px;
+				}
+			}
+		}
+
+		&.row-three {
+			.grid-flex {
+				grid-template-areas: "item-1 item-1 . . item-2 item-2 item-3 item-3 item-4 item-4 . .";
+
+				.grid-item.item-1 {
+					grid-area: item-1;
+				}
+				.grid-item.item-2 {
+					margin: 0 auto;
+				    position: relative;
+				    left: -6px;
+					grid-area: item-2;
+				}
+				.grid-item.item-3 {
+					margin: 0 auto;
+				    position: relative;
+				    left: -6px;
+					grid-area: item-3;
+				}
+				.grid-item.item-4 {
+					margin: 0 auto;
+				    position: relative;
+				    left: -5px;
+					grid-area: item-4;
+				}
+				.calc-container {
+					padding: 0 23px 30px;
+				}
+			}
+		}
+	}
+
+	.small-double-connectors {
+		background-size: 105px 75px;
+		background-repeat: no-repeat;
+		width: 105px;
+    	height: 75px;
+		margin: 0 auto;
+	    position: relative;
+
+	    &.green	{
+			background-image: url("../graphics/green-lines-arrow.png");
+		}
+
+		&.gray	{
+			background-image: url("../graphics/gray-lines-arrow.png");
+		}
+
+		&.red	{
+			background-image: url("../graphics/red-lines-arrow.png");
+			background-size: contain;
+		    width: 395px;
+		    height: 75px;
+		}
+	}
+
+	.small-single-connector {
+		background-size: 185px 75px;
+		background-repeat: no-repeat;
+		width: 185px;
+    	height: 75px;
+		margin: 0 auto;
+	    position: relative;
+
+	    &.green	{
+			background-image: url("../graphics/green-line.png");
+			left: 48px;
+		}
+
+		&.red	{
+			background-image: url("../graphics/red-line.png");
+			background-size: 187px 75px;
+			width: 187px;
+			height: 75px;
+			right: 48px;
 		}
 	}
 
 
-
 	.calc-container {
-		max-width: 126px;
+		//max-width: 126px;
 		padding: 0 10px 20px;
 		border: 1px gray solid;
 		text-align: center;
+		position: relative;
+		background: white;
 
 		&.green {
 			border-color: $lightGreen;
 			color: $darkGreen;
+
+			.smiley {
+				background-image: url("../graphics/green-smiley.png");
+			}
 		}
 
-		position: relative;
-		background: white;
+		&.gray {
+			border-color: $mediumGray;
+			color: $darkGray;
 
-		img {
-			max-width: 48px;
-			margin: 0 0 5px 0;
-			position: relative;
-			top: -25px;
+			.smiley {
+				background-image: url("../graphics/gray-even.png");
+			}
+		}
+
+		&.red {
+			border-color: $red;
+			color: $red;
+
+			.smiley {
+				background-image: url("../graphics/red-frown.png");
+			}
+		}
+
+		.smiley {
+			background-size: 48px 48px;
+			height: 48px;
+			width: 48px;
+			margin: 0 auto;
+		    position: relative;
+		    top: -25px;
+		}
+
+		.calc-box {
+			margin: 0 auto
 		}
 
 		.calc-input-container {
@@ -63,7 +243,7 @@ body {
 				height: 48px;
 				width: 48px;
 				border: 1px lightgray solid;
-   				margin: 0 5px;
+   				margin: 5px 5px 0;
 			}
 
 		}

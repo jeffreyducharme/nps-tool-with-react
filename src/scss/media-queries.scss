@@ -1,0 +1,49 @@
+$desktop: 1260px;
+$tablet: 991px;
+$mobile: 768px;
+$smallPhone: 480px;
+$xSmallPhone: 376px;
+
+
+@mixin media($query) {
+	@media only screen and (max-width : #{$query}) {
+		@content
+	}
+}
+
+@mixin desktop-and-up {
+	@media only screen and (min-width : #{$desktop}) {
+		@content
+	}
+}
+
+@mixin desktop {
+	@include media(#{$desktop}) {
+		@content
+	}
+}
+
+@mixin tablet {
+	@include media(#{$tablet}) {
+		@content
+	}
+}
+
+@mixin mobile {
+	@include media(#{$mobile}) {
+		@content
+	}
+}
+
+@mixin smallPhone {
+	@include media(#{$smallPhone}) {
+		@content
+	}
+}
+
+@mixin xSmallPhone {
+	@include media(#{$xSmallPhone}) {
+		@content
+	}
+}
+
