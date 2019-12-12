@@ -2,11 +2,12 @@
 
 $darkGray: #474645;
 $mediumGray: #BEBEB8;
-$lightGray: #FAFAF8;
+$lightGray: #FAFAF9;
 $lightGreen: #a1b800;
 $darkGreen: #728200;
 $red: #E43200; 
 $lightRed: #F3DAD1;
+$lightPurple: #8565CC;
 
 @font-face {
 	font-family: "Proxima Nova";
@@ -26,28 +27,98 @@ body {
 	background-color: $lightGray;
 
 
-	.container-fluid {
-		margin-top: 100px;
+	section {
+		padding: 50px 0;
+
+		@include tablet {
+			padding: 50px 0;
+		}
+	}
+
+	header > .container-fluid {
+		margin-top: 0;
+	}
+
+	.navbar {
+		place-content: flex-end;
+		color: $darkGray;
+	}
+
+	.navbar-nav {
+		width: 100%;
+	}
+
+	.nav-right {
+		place-content: flex-end;
+	}
+
+	.jumbotron {
+		background-color: white;
+		text-align: center;
+		margin: 0 auto;
+		color: $darkGray;
+
+		p {
+			font-size: 18px;
+		}
 	}
 
 	.border-radius {
-		border-radius: 5px;
+		border-radius: 4px;
 	}
 
-	.grid-flex {
+	section.nps-tool {
+		background-color: $lightGray;
+	}
+	.nps-tool-label {
+		display: block;
+		background-color: $lightPurple;
+		color: white;
+		border-radius: 2px;
+		padding: 5px 10px;
+		margin: 0 auto;
+		text-align: center;
+		max-width: 160px;
+		position: relative;
+		top: -65px;
+	}
+
+	.grid-container {
 		display: grid;
+
+
 		grid-template-columns: repeat(12, 1fr);
 		margin: 0 auto;
 		grid-template-rows: auto;
 		max-width: 80%;
 
+		@include desktop {
+			max-width: 90%;
+		}
+
+		@include tablet {
+			max-width: 100%;
+			display: block;
+		}
+
 		.grid-item:nth-child(1) {
 			max-width: 140px;
 			margin: 0 20px;
+
+			@include tablet {
+				text-align: center;
+				max-width: none;
+				margin: 40px auto; 
+			}
 		}
 
 		.grid-item {
 			margin-right: 10px;
+
+			@include tablet {
+				margin-right: 0;
+				margin-bottom: 40px;
+			}
 		}
 	}
 
@@ -55,7 +126,7 @@ body {
 		margin: 20px 0; 
 
 		&.row-one {
-			.grid-flex {
+			.grid-container {
 				grid-template-areas: "item-1 item-1 item-2 item-2 item-3 item-3 item-4 item-4 item-4 item-4 item-4 item-4";
 
 				.grid-item.item-1 {
@@ -63,6 +134,7 @@ body {
 				}
 				.grid-item.item-2 {
 					grid-area: item-2;
+
 				}
 				.grid-item.item-3 {
 					grid-area: item-3;
@@ -70,8 +142,17 @@ body {
 				.grid-item.item-4 {
 					grid-area: item-4;
 				}
+				.grid-item.item-2, .grid-item.item-3 {
+					@include tablet {
+						max-width: 150px;
+						margin: 0 auto 40px;
+					}
+				}
 				.calc-container {
 					padding: 0 20px 30px;
+					@include tablet {
+						padding: 0 5px 30px;
+					}
 				}
 			}
 		}
@@ -79,64 +160,69 @@ body {
 		&.row-two {
 			margin: 20px 0 90px;
 
-			.grid-flex {
+			@include tablet {
+				margin: 20px 0;
+			}
+
+			.grid-container {
 				grid-template-areas: "item-1 item-1 item-2 item-2 item-3 item-3 . . item-4 item-4 . .";
 
 				.grid-item.item-1 {
 					grid-area: item-1;
 				}
 				.grid-item.item-2 {
-					margin: 0 auto;
-				    position: relative;
-				    left: -5px;
 					grid-area: item-2;
 				}
 				.grid-item.item-3 {
-					margin: 0 auto;
-				    position: relative;
-				    left: -5px;
 					grid-area: item-3;
 				}
+
 				.grid-item.item-4 {
-					margin: 0 auto;
-				    position: relative;
-				    left: -5px;
-					grid-area: item-4;
+					grid-area: item-4;	
 				}
-				.calc-container {
-					padding: 0 20px 30px;
+
+				.grid-item.item-2, .grid-item.item-3, .grid-item.item-4 {
+					position: relative;
+
+					@include tablet {
+						position: static;
+					}
 				}
 			}
 		}
 
 		&.row-three {
-			.grid-flex {
+			.grid-container {
 				grid-template-areas: "item-1 item-1 . . item-2 item-2 item-3 item-3 item-4 item-4 . .";
 
 				.grid-item.item-1 {
 					grid-area: item-1;
 				}
 				.grid-item.item-2 {
-					margin: 0 auto;
-				    position: relative;
-				    left: -6px;
 					grid-area: item-2;
 				}
 				.grid-item.item-3 {
-					margin: 0 auto;
-				    position: relative;
-				    left: -6px;
 					grid-area: item-3;
+
+				}
+				.grid-item.item-2, .grid-item.item-3, .grid-item.item-4 {
+					position: relative;
+
+					@include tablet {
+						position: static;
+					}
 				}
 				.grid-item.item-4 {
-					margin: 0 auto;
-				    position: relative;
-				    left: -5px;
+					left: -5px;
 					grid-area: item-4;
 				}
-				.calc-container {
-					padding: 0 23px 30px;
-				}
+			}
+		}
+		&.row-two, &.row-three {
+			.calc-container {
+				padding: 0 20px 30px;
+				max-width: 105px;
+				margin: 0 auto;
 			}
 		}
 	}
@@ -145,11 +231,11 @@ body {
 		background-size: 105px 75px;
 		background-repeat: no-repeat;
 		width: 105px;
-    	height: 75px;
+		height: 75px;
 		margin: 0 auto;
-	    position: relative;
+		position: relative;
 
-	    &.green	{
+		&.green	{
 			background-image: url("../graphics/green-lines-arrow.png");
 		}
 
@@ -159,9 +245,13 @@ body {
 
 		&.red	{
 			background-image: url("../graphics/red-lines-arrow.png");
-			background-size: contain;
-		    width: 395px;
-		    height: 75px;
+			background-size: 100%;
+			width: 90%;
+			height: 75px;
+		}
+
+		@include tablet {
+			display: none;
 		}
 	}
 
@@ -169,11 +259,11 @@ body {
 		background-size: 185px 75px;
 		background-repeat: no-repeat;
 		width: 185px;
-    	height: 75px;
+		height: 75px;
 		margin: 0 auto;
-	    position: relative;
+		position: relative;
 
-	    &.green	{
+		&.green	{
 			background-image: url("../graphics/green-line.png");
 			left: 48px;
 		}
@@ -185,11 +275,14 @@ body {
 			height: 75px;
 			right: 48px;
 		}
+
+		@include tablet {
+			display: none;
+		}
 	}
 
 
 	.calc-container {
-		//max-width: 126px;
 		padding: 0 10px 20px;
 		border: 1px gray solid;
 		text-align: center;
@@ -228,12 +321,21 @@ body {
 			height: 48px;
 			width: 48px;
 			margin: 0 auto;
-		    position: relative;
-		    top: -25px;
+			position: relative;
+			top: -25px;
+
+			@include tablet
+				height: 40px;
+				width: 40px;
+				background-size: 40px 40px;
 		}
 
 		.calc-box {
-			margin: 0 auto
+			margin: 0 auto;
+
+			input {
+				border: 1px $lightGray solid;
+			}
 		}
 
 		.calc-input-container {
@@ -242,11 +344,90 @@ body {
 			input {
 				height: 48px;
 				width: 48px;
-				border: 1px lightgray solid;
-   				margin: 5px 5px 0;
-			}
+				border: 1px $mediumGray solid;
+				margin: 5px 5px 0;
 
+				@include tablet
+					height: 40px;
+					width: 40px;
+			}
 		}
 	}
 
+	.footer-signup-form {
+		margin: 50px 0;
+		text-align: center;
+		border-bottom: 1px $mediumGray solid;
+		padding: 50px 0 100px;
+
+		.left-container, .right-container {
+			display: inline-block;
+			position: relative;
+			left: 9px;
+		}
+
+		.signup-form {
+			margin-bottom: 20px;
+		}
+
+		input, button {
+			min-width: 225px;
+			padding: 10px 15px;
+			border-radius: 5px;
+			border: 1px $mediumGray solid;
+			margin: 10px;
+
+			&.left {
+				border-radius: 25px 5px 5px 25px;
+			}
+
+			&.right {
+				border-radius: 5px 25px 25px 5px;
+			}
+
+			&.left-right {
+				border-radius: 25px;
+			}
+		}
+
+		button {
+			color: white;
+			background-color: $lightPurple;
+		}
+
+		.google-signup-button {
+			background-color: white;
+			padding: 0;
+
+			.google-signup-button-inner {
+				padding: 10px 15px;
+
+				background-image: url('../graphics/google-circle-icon.png'); 
+				color: $mediumGray;
+				background-color: transparent;
+				background-size: 30px 30px;
+				background-repeat: no-repeat;
+				background-position: left center;
+				position: relative;
+				left: 15px;
+			}
+		}
+
+		.facebook-circle, .twitter-circle {
+			background-size: cover;
+			height: 25px;
+			width: 25px;
+			display: inline-block;
+			margin: 0px 5px;
+		}
+
+		.facebook-circle {
+			background-image: url('../graphics/facebook-circle.svg'); 
+		}
+
+		.twitter-circle {
+			background-image: url('../graphics/twitter-circle.svg'); 
+		}
+	}
 }
+
