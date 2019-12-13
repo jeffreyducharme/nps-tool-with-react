@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Uniform Teeth - NPS Calculator</title>
+	<script src="./dist/bundle.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="./dist/main.css?v=2">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</head>
+<body>
+	<header>
+		<div class="container-fluid">
+			<nav class="navbar navbar-expand-lg navbar-light">
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav">
+					  <li class="nav-item dropdown">
+					    <a class="nav-link dropdown-toggle" href="#Topic" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					      Products
+					    </a>
+					    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					      <a class="dropdown-item" href="#">Action</a>
+					      <a class="dropdown-item" href="#">Another action</a>
+					      <div class="dropdown-divider"></div>
+					      <a class="dropdown-item" href="#">Something else here</a>
+					    </div>
+					  </li>
+					  <li class="nav-item">
+					    <a class="nav-link" href="#Today">Customer</a>
+					  </li>
+					  <li class="nav-item">
+					    <a class="nav-link" href="#Today">Enterprise</a>
+					  </li>
+					  <li class="nav-item">
+					    <a class="nav-link" href="#Tomorrow">Pricing</a>
+					  </li>
+					</ul>
+					<ul class="navbar-nav nav-right">
+					  <li class="nav-item dropdown">
+					    <a class="nav-link dropdown-toggle" href="#Topic" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					      Help
+					    </a>
+					    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					      <a class="dropdown-item" href="#">Action</a>
+					      <a class="dropdown-item" href="#">Another action</a>
+					      <div class="dropdown-divider"></div>
+					      <a class="dropdown-item" href="#">Something else here</a>
+					    </div>
+					  </li>
+					  <li class="nav-item">
+					    <a class="nav-link" href="#Today">Get Started for free</a>
+					  </li>
+					  <li class="nav-item">
+					    <a class="nav-link redOrange" href="#SignIn">Sign in</a>
+					  </li>
+					</ul>
+				</div>	
+			</nav>
+		</div>
+	</header>
+
+	<section class="hero">
+		<div class="container-fluid">
+			<div class="jumbotron col-md-8 col-md-offset-2">
+				<h1>Calculate your NPS® (Net Promoter Score)</h1>
+				<p>Calculating your NPS score is as simple as tallying up your responses and subtracting the percentage of detractors from the percentage of promoters. The score is a whole number that ranges from -100 to 100, and indicates customer happiness with your brand experience.</p>
+				<p>Use the calculator below to calculate your NPS from your survey responses.</p>
+			</div>
+		</div>
+	</section>
+	<section class="nps-tool" id="NPSContainer">
+		<div class="nps-tool-label">NPS CALCULATOR</div>
+		<div class="container-fluid">
+			<div class="row row-1">
+				<div class="grid-container">
+					<div class="grid-item item-1">
+						<strong>Count the responses</strong>
+						<br>
+						<p>Add up the number of responses provided for each score.</p>
+					</div>
+					<div class="grid-item item-2">
+						<div class="calc-container border-radius green">
+							<div class="smiley"></div>
+							<div class="calc-input-container">
+								<div class="calc-box box-10">
+									<div>10</div>
+									<input type="" name="" class="border-radius">
+								</div>
+								<div class="calc-box box-9">
+									<div>9</div>
+									<input type="" name="" class="border-radius">
+								</div>
+							</div>
+						</div>
+						<div class="small-double-connectors green"></div>
+					</div>
+					<div class="grid-item item-3">
+						<div class="calc-container border-radius gray">
+							<div class="smiley"></div>
+							<div class="calc-input-container">
+								<div class="calc-box box-8">
+									<div>8</div>
+									<input type="" name="" class="border-radius">
+								</div>
+								<div class="calc-box box-7">
+									<div>7</div>
+									<input type="" name="" class="border-radius">
+								</div>
+							</div>
+						</div>
+						<div class="small-double-connectors gray"></div>
+					</div>
+					<div class="grid-item item-4">
+						<div class="calc-container border-radius red">
+							<div class="smiley"></div>
+							<div class="calc-input-container">
+								<div class="calc-box box-6">
+									<div>6</div>
+									<input type="" name="" class="border-radius">
+								</div>
+								<div class="calc-box box-5">
+									<div>5</div>
+									<input type="" name="" class="border-radius">
+								</div>
+								<div class="calc-box box-4">
+									<div>4</div>
+									<input type="" name="" class="border-radius">
+								</div>
+								<div class="calc-box box-3">
+									<div>3</div>
+									<input type="" name="" class="border-radius">
+								</div>
+								<div class="calc-box box-2">
+									<div>2</div>
+									<input type="" name="" class="border-radius">
+								</div>
+								<div class="calc-box box-1">
+									<div>1</div>
+									<input type="" name="" class="border-radius">
+								</div>
+								<div class="calc-box box-0">
+									<div>0</div>
+									<input type="" name="" class="border-radius">
+								</div>
+							</div>
+						</div>
+						<div class="small-double-connectors red"></div>
+					</div>
+				</div>
+			</div>
+			<div class="row row-2">
+				<div class="grid-container">
+					<div class="grid-item item-1">
+						<strong>Count the responses</strong>
+						<br>
+						<p>Add up the number of responses provided for each score.</p>
+					</div>
+					<div class="grid-item item-2">
+						<div class="calc-container border-radius green">
+							<div class="smiley"></div>
+							<div class="calc-input-container">
+								<div class="calc-box">
+									<div>Total</div>
+									<input type="" name="" class="border-radius">
+								</div>
+							</div>
+						</div>
+						<div class="small-single-connectors green"></div>
+					</div>
+					<div class="grid-item item-3">
+						<div class="calc-container border-radius gray">
+							<div class="smiley"></div>
+							<div class="calc-input-container">
+								<div class="calc-box">
+									<div>Total</div>
+									<input type="" name="" class="border-radius">
+								</div>
+							</div>
+						</div>
+						<div class="gray"></div>
+					</div>
+					<div class="grid-item item-4">
+						<div class="calc-container border-radius red">
+							<div class="smiley"></div>
+							<div class="calc-input-container">
+								<div class="calc-box">
+									<div>Total</div>
+									<input type="" name="" class="border-radius">
+								</div>
+							</div>
+						</div>
+						<div class="small-single-connectors red"></div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="row row-3">
+				<div class="grid-container">
+					<div class="grid-item item-1">
+						<strong>Count the responses</strong>
+						<br>
+						<p>Add up the number of responses provided for each score.</p>
+					</div>
+					<div class="grid-item item-2">
+						<div class="calc-container border-radius green">
+							<div class="smiley"></div>
+							<div class="calc-input-container">
+								<div class="calc-box">
+									<div>0<span class="percentage">%</span></div>
+									<div>of total<br>responses</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="grid-item item-3">
+						<div class="calc-container border-radius red">
+							<div class="smiley"></div>
+							<div class="calc-input-container">
+								<div class="calc-box">
+									<div>8<span class="percentage">%</span></div>
+									<div>of total<br>responses</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="grid-item item-4">
+						<div class="calc-container border-radius gray">
+							<div class="smiley"></div>
+							<div class="calc-input-container">
+								<div class="calc-box">
+									<div>6<span class="percentage">%</span></div>
+									<div>of total<br>responses</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="footer-signup-form col-md-12">
+		<div class="container-fluid">
+			<form class="signup-form ">
+				<div class="left-container">
+					<input class="left" type="email" name="email" placeholder="Your email address" require />
+					<input type="password" id="pass" name="password" minlength="8" placeholder="Choose your password" required />
+				</div>
+					<div class="right-container">
+					<button class="right" type="submit">Get started</button>
+					<span>or</span>
+					<button class="google-signup-button left-right" type="submit">
+						<div class="google-signup-button-inner">
+							Sign up with Google
+						</div>
+					</button>
+				</div>
+			</form>
+			<div class="social-icons">
+				<div class="facebook-circle"></div>
+				<div class="twitter-circle"></div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>

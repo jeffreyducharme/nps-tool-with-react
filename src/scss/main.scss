@@ -125,7 +125,7 @@ body {
 	.row {
 		margin: 20px 0; 
 
-		&.row-one {
+		&.row-1 {
 			.grid-container {
 				grid-template-areas: "item-1 item-1 item-2 item-2 item-3 item-3 item-4 item-4 item-4 item-4 item-4 item-4";
 
@@ -157,7 +157,7 @@ body {
 			}
 		}
 
-		&.row-two {
+		&.row-2 {
 			margin: 20px 0 90px;
 
 			@include tablet {
@@ -191,7 +191,7 @@ body {
 			}
 		}
 
-		&.row-three {
+		&.row-3 {
 			.grid-container {
 				grid-template-areas: "item-1 item-1 . . item-2 item-2 item-3 item-3 item-4 item-4 . .";
 
@@ -218,11 +218,16 @@ body {
 				}
 			}
 		}
-		&.row-two, &.row-three {
+		&.row-2, &.row-3 {
 			.calc-container {
 				padding: 0 20px 30px;
 				max-width: 105px;
 				margin: 0 auto;
+			}
+		}
+		&.row-3 {
+			.calc-container {
+				padding: 0 15px 30px;
 			}
 		}
 	}

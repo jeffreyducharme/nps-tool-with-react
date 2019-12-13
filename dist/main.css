@@ -76,65 +76,67 @@ body {
           margin-bottom: 40px; } }
   body .row {
     margin: 20px 0; }
-    body .row.row-one .grid-container {
+    body .row.row-1 .grid-container {
       grid-template-areas: "item-1 item-1 item-2 item-2 item-3 item-3 item-4 item-4 item-4 item-4 item-4 item-4"; }
-      body .row.row-one .grid-container .grid-item.item-1 {
+      body .row.row-1 .grid-container .grid-item.item-1 {
         grid-area: item-1; }
-      body .row.row-one .grid-container .grid-item.item-2 {
+      body .row.row-1 .grid-container .grid-item.item-2 {
         grid-area: item-2; }
-      body .row.row-one .grid-container .grid-item.item-3 {
+      body .row.row-1 .grid-container .grid-item.item-3 {
         grid-area: item-3; }
-      body .row.row-one .grid-container .grid-item.item-4 {
+      body .row.row-1 .grid-container .grid-item.item-4 {
         grid-area: item-4; }
       @media only screen and (max-width: 991px) {
-        body .row.row-one .grid-container .grid-item.item-2, body .row.row-one .grid-container .grid-item.item-3 {
+        body .row.row-1 .grid-container .grid-item.item-2, body .row.row-1 .grid-container .grid-item.item-3 {
           max-width: 150px;
           margin: 0 auto 40px; } }
-      body .row.row-one .grid-container .calc-container {
+      body .row.row-1 .grid-container .calc-container {
         padding: 0 20px 30px; }
         @media only screen and (max-width: 991px) {
-          body .row.row-one .grid-container .calc-container {
+          body .row.row-1 .grid-container .calc-container {
             padding: 0 5px 30px; } }
-    body .row.row-two {
+    body .row.row-2 {
       margin: 20px 0 90px; }
       @media only screen and (max-width: 991px) {
-        body .row.row-two {
+        body .row.row-2 {
           margin: 20px 0; } }
-      body .row.row-two .grid-container {
+      body .row.row-2 .grid-container {
         grid-template-areas: "item-1 item-1 item-2 item-2 item-3 item-3 . . item-4 item-4 . ."; }
-        body .row.row-two .grid-container .grid-item.item-1 {
+        body .row.row-2 .grid-container .grid-item.item-1 {
           grid-area: item-1; }
-        body .row.row-two .grid-container .grid-item.item-2 {
+        body .row.row-2 .grid-container .grid-item.item-2 {
           grid-area: item-2; }
-        body .row.row-two .grid-container .grid-item.item-3 {
+        body .row.row-2 .grid-container .grid-item.item-3 {
           grid-area: item-3; }
-        body .row.row-two .grid-container .grid-item.item-4 {
+        body .row.row-2 .grid-container .grid-item.item-4 {
           grid-area: item-4; }
-        body .row.row-two .grid-container .grid-item.item-2, body .row.row-two .grid-container .grid-item.item-3, body .row.row-two .grid-container .grid-item.item-4 {
+        body .row.row-2 .grid-container .grid-item.item-2, body .row.row-2 .grid-container .grid-item.item-3, body .row.row-2 .grid-container .grid-item.item-4 {
           position: relative; }
           @media only screen and (max-width: 991px) {
-            body .row.row-two .grid-container .grid-item.item-2, body .row.row-two .grid-container .grid-item.item-3, body .row.row-two .grid-container .grid-item.item-4 {
+            body .row.row-2 .grid-container .grid-item.item-2, body .row.row-2 .grid-container .grid-item.item-3, body .row.row-2 .grid-container .grid-item.item-4 {
               position: static; } }
-    body .row.row-three .grid-container {
+    body .row.row-3 .grid-container {
       grid-template-areas: "item-1 item-1 . . item-2 item-2 item-3 item-3 item-4 item-4 . ."; }
-      body .row.row-three .grid-container .grid-item.item-1 {
+      body .row.row-3 .grid-container .grid-item.item-1 {
         grid-area: item-1; }
-      body .row.row-three .grid-container .grid-item.item-2 {
+      body .row.row-3 .grid-container .grid-item.item-2 {
         grid-area: item-2; }
-      body .row.row-three .grid-container .grid-item.item-3 {
+      body .row.row-3 .grid-container .grid-item.item-3 {
         grid-area: item-3; }
-      body .row.row-three .grid-container .grid-item.item-2, body .row.row-three .grid-container .grid-item.item-3, body .row.row-three .grid-container .grid-item.item-4 {
+      body .row.row-3 .grid-container .grid-item.item-2, body .row.row-3 .grid-container .grid-item.item-3, body .row.row-3 .grid-container .grid-item.item-4 {
         position: relative; }
         @media only screen and (max-width: 991px) {
-          body .row.row-three .grid-container .grid-item.item-2, body .row.row-three .grid-container .grid-item.item-3, body .row.row-three .grid-container .grid-item.item-4 {
+          body .row.row-3 .grid-container .grid-item.item-2, body .row.row-3 .grid-container .grid-item.item-3, body .row.row-3 .grid-container .grid-item.item-4 {
             position: static; } }
-      body .row.row-three .grid-container .grid-item.item-4 {
+      body .row.row-3 .grid-container .grid-item.item-4 {
         left: -5px;
         grid-area: item-4; }
-    body .row.row-two .calc-container, body .row.row-three .calc-container {
+    body .row.row-2 .calc-container, body .row.row-3 .calc-container {
       padding: 0 20px 30px;
       max-width: 105px;
       margin: 0 auto; }
+    body .row.row-3 .calc-container {
+      padding: 0 15px 30px; }
   body .small-double-connectors {
     background-size: 105px 75px;
     background-repeat: no-repeat;
