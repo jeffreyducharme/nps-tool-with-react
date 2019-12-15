@@ -6,13 +6,16 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const WebpackBuildNotifierPlugin = require('webpack-build-notifier');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
+const HtmlWebPackPlugin = require("html-webpack-plugin");
+
+
 
 // This is main configuration object.
 // Here you write different options and tell Webpack what to do
 module.exports = {
 
   // Path to your entry point. From this file Webpack will begin his work
-  entry: [path.resolve(__dirname, `${src}/js/index.js`), path.resolve(__dirname, `${src}/js/styles.js`)],
+  entry: [path.resolve(__dirname, `${src}/js/main.js`), path.resolve(__dirname, `${src}/js/styles.js`)],
 
   // Path and filename of your result bundle.
   // Webpack will bundle all JavaScript into this file
@@ -23,6 +26,11 @@ module.exports = {
   watch: false,
   devtool: 'source-map',
 
+  devServer: {
+    publicPath: '/dist/',
+    port: 3000
+  },
+  
   module: {
     rules: [
       {
@@ -102,7 +110,11 @@ module.exports = {
         jQuery: 'jquery',
         'window.jQuery': 'jquery',
         Popper: ['popper.js', 'default'],            
-      })
+      }),
+    new HtmlWebPackPlugin({
+      template: "./src/index.html",
+      filename: "./index.html"
+    })
   ],
   
   resolve: {

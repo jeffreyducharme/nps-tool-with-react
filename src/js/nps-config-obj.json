@@ -1,0 +1,231 @@
+{
+	"Rows": [{
+			"row": "1",
+			"items": [{
+					"gridItem": "1",
+					"itemType": "row-title",
+					"color": "",
+					"boxes": false,
+					"text": {
+						"title": "Count the responses",
+						"subtext": "Add up the number of responses provided for each score."
+					}
+				},
+				{
+					"gridItem": "2",
+					"itemType": "calc-box",
+					"color": "green",
+					"boxes": [{
+							"fieldType": "input",
+							"boxNum": "10",
+							"boxText": "10",
+							"name": "box-10",
+							"type": "text",
+							"value": 0
+						},
+						{
+							"fieldType": "input",
+							"boxNum": "9",
+							"boxText": "9",
+							"name": "box-9",
+							"type": "text",
+							"value": 0
+						}
+					]
+				},
+				{
+					"gridItem": "3",
+					"itemType": "calc-box",
+					"color": "gray",
+					"boxes": [{
+							"fieldType": "input",
+							"boxNum": "8",
+							"boxText": "8",
+							"name": "box-8",
+							"type": "text",
+							"value": 0
+						},
+						{
+							"fieldType": "input",
+							"boxNum": "7",
+							"boxText": "7",
+							"name": "box-7",
+							"type": "text",
+							"value": 0
+						}
+					]
+				},
+				{
+					"gridItem": "4",
+					"itemType": "calc-box",
+					"color": "red",
+					"boxes": [{
+							"fieldType": "input",
+							"boxNum": "6",
+							"boxText": "6",
+							"name": "box-6",
+							"type": "text",
+							"value": 0
+						},
+						{
+							"fieldType": "input",
+							"boxNum": "5",
+							"boxText": "5",
+							"name": "box-5",
+							"type": "text",
+							"value": 0
+						},
+						{
+							"fieldType": "input",
+							"boxNum": "4",
+							"boxText": "4",
+							"name": "box-4",
+							"type": "text",
+							"value": 0
+						},
+						{
+							"fieldType": "input",
+							"boxNum": "3",
+							"boxText": "3",
+							"name": "box-3",
+							"type": "text",
+							"value": 0
+						},
+						{
+							"fieldType": "input",
+							"boxNum": "2",
+							"boxText": "2",
+							"name": "box-2",
+							"type": "text",
+							"value": 0
+						},
+						{
+							"fieldType": "input",
+							"boxNum": "1",
+							"boxText": "1",
+							"name": "box-1",
+							"type": "text",
+							"value": 0
+						},
+						{
+							"fieldType": "input",
+							"boxNum": "0",
+							"boxText": "0",
+							"name": "box-0",
+							"type": "text",
+							"value": 0
+						}
+					]
+				}
+			]
+		},
+		{
+			"row": "2",
+			"items": [{
+					"gridItem": "1",
+					"itemType": "row-title",
+					"color": "",
+					"boxes": false,
+					"text": {
+						"title": "Group the responses",
+						"subtext": "Add up the total number of responses provided for each group."
+					}
+				},
+				{
+					"gridItem": "2",
+					"itemType": "response-box",
+					"color": "green",
+					"boxes": [{
+						"fieldType": "input",
+						"boxNum": "Total",
+						"boxText": "Total",
+						"name": "promoters-total",
+						"type": "text",
+						"value": 0
+					}]
+				},
+				{
+					"gridItem": "3",
+					"itemType": "response-box",
+					"color": "gray",
+					"boxes": [{
+						"fieldType": "input",
+						"boxNum": "Total",
+						"boxText": "Total",
+						"name": "passive-total",
+						"type": "text",
+						"value": 0
+					}]
+
+				},
+				{
+					"gridItem": "4",
+					"itemType": "response-box",
+					"color": "red",
+					"boxes": [{
+						"fieldType": "input",
+						"boxNum": "Total",
+						"boxText": "Total",
+						"name": "detractors-total",
+						"type": "text",
+						"value": 0
+					}]
+				}
+			]
+		},
+		{
+			"row": "3",
+			"items": [{
+					"gridItem": "1",
+					"itemType": "row-title",
+					"color": "",
+					"boxes": false,
+					"text": {
+						"title": "Calculate your NPS",
+						"subtext": "Subtract the percentage of Detractors from the percentage of Promoters."
+					}
+				},
+				{
+					"gridItem": "2",
+					"itemType": "totals-box",
+					"color": "green",
+					"boxes": [{
+						"fieldType": "text",
+						"boxNum": "responses",
+						"boxText": "of total responses",
+						"name": "box-10",
+						"type": "text",
+						"value": ""
+					}]
+				},
+				{
+					"gridItem": "3",
+					"itemType": "totals-box",
+					"color": "red",
+					"boxes": [{
+						"fieldType": "text",
+						"boxNum": "responses",
+						"boxText": "of total responses",
+						"name": "box-6",
+						"type": "text",
+						"value": ""
+					}]
+				},
+				{
+					"gridItem": "4",
+					"itemType": "totals-box",
+					"color": "NPS-black",
+					"boxes": [{
+						"fieldType": "text",
+						"boxNum": "This is your NPS",
+						"boxText": "This is your NPS",
+						"name": "box-8",
+						"type": "text",
+						"value": ""
+					}]
+
+				}
+			]
+		}
+	]
+}

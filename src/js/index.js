@@ -1,6 +1,9 @@
-//require('bootstrap');
-console.log('heyo');
+import React, { Component } from "react";
+import ReactDOM from 'react-dom';
+import App from './App.js';
 
-// import NPSContainer from "./js/components/container/NPSContainer.jsx";
+ReactDOM.render(
+	<App />,
+	document.getElementById('app')
+)
 
-import App from "./components/container/App.js";

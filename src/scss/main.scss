@@ -21,10 +21,10 @@ html {
 }
 
 body {
-
+	
 	font-family: 'Proxima Nova', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	color: $darkGray; 
-	background-color: $lightGray;
+	background-color: white;
 
 
 	section {
@@ -86,15 +86,10 @@ body {
 	.grid-container {
 		display: grid;
 
-
 		grid-template-columns: repeat(12, 1fr);
 		margin: 0 auto;
 		grid-template-rows: auto;
-		max-width: 80%;
-
-		@include desktop {
-			max-width: 90%;
-		}
+		max-width: 1000px;
 
 		@include tablet {
 			max-width: 100%;
@@ -155,14 +150,15 @@ body {
 					}
 				}
 			}
+			.red .calc-input-container {
+				@include mobile {
+			    display: grid;
+			    grid-template-columns: repeat(2, 1fr);
+			    }
+			}
 		}
 
 		&.row-2 {
-			margin: 20px 0 90px;
-
-			@include tablet {
-				margin: 20px 0;
-			}
 
 			.grid-container {
 				grid-template-areas: "item-1 item-1 item-2 item-2 item-3 item-3 . . item-4 item-4 . .";
@@ -219,20 +215,20 @@ body {
 			}
 		}
 		&.row-2, &.row-3 {
-			.calc-container {
+			.calc-container, .totals-container {
 				padding: 0 20px 30px;
 				max-width: 105px;
 				margin: 0 auto;
 			}
 		}
 		&.row-3 {
-			.calc-container {
+			.calc-container, .totals-container {
 				padding: 0 15px 30px;
 			}
 		}
 	}
 
-	.small-double-connectors {
+	.line-connectors {
 		background-size: 105px 75px;
 		background-repeat: no-repeat;
 		width: 105px;
@@ -260,34 +256,44 @@ body {
 		}
 	}
 
-	.small-single-connector {
-		background-size: 185px 75px;
-		background-repeat: no-repeat;
-		width: 185px;
-		height: 75px;
-		margin: 0 auto;
-		position: relative;
-
-		&.green	{
-			background-image: url("../graphics/green-line.png");
-			left: 48px;
-		}
-
-		&.red	{
-			background-image: url("../graphics/red-line.png");
-			background-size: 187px 75px;
-			width: 187px;
+	.row-2 {
+		.line-connectors {
+			background-size: 100% 100%;
+			background-repeat: no-repeat;
+			width: 175px;
 			height: 75px;
-			right: 48px;
-		}
+			margin: 0 auto;
+			position: relative;
 
-		@include tablet {
-			display: none;
+			&.green	{
+				background-image: url("../graphics/green-line.png");
+				left: 75px;
+			}
+
+			&.gray	{
+				background-image: none;
+			}
+
+
+			&.red	{
+				background-image: url("../graphics/red-line.png");
+				right: 92px;
+				width: 170px;
+			}
+
+			@include tablet {
+				display: none;
+			}
 		}
 	}
 
+	.row-3 {
+		.line-connectors {
+			display: none
+		}
+	}
 
-	.calc-container {
+	.calc-container, .totals-container{
 		padding: 0 10px 20px;
 		border: 1px gray solid;
 		text-align: center;
@@ -321,18 +327,23 @@ body {
 			}
 		}
 
+
+		&.NPS-black {
+			border-color: $darkGray;
+			color: $darkGray;
+
+			.smiley {
+				background-image: url("../graphics/nps.png");
+			}
+		}
+
 		.smiley {
-			background-size: 48px 48px;
-			height: 48px;
-			width: 48px;
+			background-size: 100% 100%;
+			height: 50px;
+			width: 50px;
 			margin: 0 auto;
 			position: relative;
-			top: -25px;
-
-			@include tablet
-				height: 40px;
-				width: 40px;
-				background-size: 40px 40px;
+			top: -25px;	
 		}
 
 		.calc-box {
@@ -351,11 +362,15 @@ body {
 				width: 48px;
 				border: 1px $mediumGray solid;
 				margin: 5px 5px 0;
+				text-align: center;
 
-				@include tablet
-					height: 40px;
-					width: 40px;
 			}
+		}
+
+	}
+	.row-3 {
+		.boxText {
+			font-size: .9rem;
 		}
 	}
 
