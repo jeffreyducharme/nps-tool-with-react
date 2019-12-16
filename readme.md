@@ -1,5 +1,6 @@
+Some React code from a php and jquery developer. I had a lot of great learning on this mini project. Ask me about how I might approach this project differently in the future. 
 
+Live Demo: https://nps.jeffreyducharme.com/
 
-npm install --save-dev webpack css-loader style-loader sass-loader url-loader file-loader babel-loader @babel/core @babel/preset-env mini-css-extract-plugin webpack-notifier clean-webpack-plugin
-
+Built w/: React, Easy Peasy state management (minimal), Webpack, Webpack dev server, SCSS, and love.
 
