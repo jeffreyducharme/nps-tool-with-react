@@ -12,7 +12,7 @@ class ResponseContainer extends React.Component {
 					<div className="calc-input-container">
 					{ 
 						this.props.boxes.map((box, i) => {
-							return <ResponseBox key={i} box={box} />
+							return <ResponseBox key={i} box={box} index={this.props.index} countValue={this.props.countValue} />
 						})	
 					} 
 					</div>

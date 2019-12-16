@@ -12,11 +12,11 @@ class GridItem extends React.Component {
 	  	case 'row-title':
 	      return <TitleBox text={this.props.item.text}/>
 	   	case 'response-box':
-	      return <ResponseContainer color={this.props.item.color} boxes={this.props.item.boxes}/>
+	      return <ResponseContainer index={this.props.index} countValue={this.props.countValue} color={this.props.item.color} boxes={this.props.item.boxes}/>
 	    case 'totals-box':
-	      return <TotalsContainer color={this.props.item.color} boxes={this.props.item.boxes}/>
+	      return <TotalsContainer index={this.props.index} countValue={this.props.countValue} color={this.props.item.color} boxes={this.props.item.boxes}/>
 	    default:
-	      return <CalcContainer color={this.props.item.color} boxes={this.props.item.boxes}/>
+	      return <CalcContainer color={this.props.item.color} boxes={this.props.item.boxes} countValue={this.props.countValue} changeHandler={this.props.changeHandler}/>
 	  }
 	}
 

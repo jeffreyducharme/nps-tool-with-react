@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import CalcBox from './CalcBox.jsx'
-//import PropTypes from "prop-types";
 
 class CalcContainer extends React.Component {
 
@@ -13,7 +12,7 @@ class CalcContainer extends React.Component {
 					<div className="calc-input-container">
 					{ 
 						this.props.boxes.map((box, i) => {
-							return <CalcBox key={i} box={box} />
+							return <CalcBox countValue={this.props.countValue} key={i} box={box} changeHandler={this.props.changeHandler} />
 						})	
 					} 
 					</div>

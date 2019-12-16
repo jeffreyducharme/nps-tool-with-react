@@ -7,17 +7,13 @@ import NPSContainer from "./components/NPSContainer.jsx"
 import Footer from "./components/Footer.jsx"
 import Rows from "./nps-config-obj.json"
 
-
-
 class App extends Component {
 
-	render() {
+	constructor(props) {
+		super(props)
 
-		let that = this;
-
-		let store = createStore({
-		  	initCount: 0,
-		  	countValue: {
+		this.state = {
+			countValue: {
 			  	"box-10": {value: 0},
 			  	"box-9": {value: 0},
 			  	"box-8": {value: 0},
@@ -29,40 +25,48 @@ class App extends Component {
 			  	"box-2": {value: 0},
 			  	"box-1": {value: 0},
 			  	"box-0": {value: 0},
+			  	
 		  	},
+		  	promoters_score: null,
 
-		  	handleChange: function(e) {
-		  		let val = e.target.value
+		  	store: null,
+		  	rows: Rows.Rows,
+		}
 
-		  		if ( !isNaN(val) ) {
-					that.setState(prevState => {
-					  let countValue = Object.assign({}, prevState.countValue);  // creating copy of state variable jasper
-					  countValue[e.target.name].value = val;                     // update the name property, assign a new value                 
-					  return { countValue };                                 // return new object jasper object
-					})
-				}
-
-		  		let promoters_score = that.countValue['box-10'] + that.countValue['box-9'];
-		  		let passive_score = that.countValue['box-8'] + that.countValue['box-7'];
-		  		let detractors_score = that.countValue['box-6'] + that.countValue['box-5'] + that.countValue['box-4'] + that.countValue['box-3'] + that.countValue['box-2'] + that.countValue['box-1'] + that.countValue['box-0'];
-		  		let total_responses = promoters_score+passive_score+detractors_score
-		  		let promoters_percentage = Math.round( promoters_score / total_responses )
-		  		let detractors_percentage = Math.round( detractors_score / total_responses )
-		  		
-		  		let nps_score = Math.round((promoters_score - detractors_score) / total_responses) * 100
-
-		  		document.querySelector('.row-2 .promoters-total input').value = promoters_score
-		  		document.querySelector('.row-2 .passive-total input').value = passive_score
-		  		document.querySelector('.row-2 .detractors-total input').value = detractors_score
+		this.handleChange = this.handleChange.bind(this);
+	}
 
 
-		  	}
-		});
+	componentDidMount() {
 
-		let rows = Rows.Rows
+		const store = createStore({...this.countValue});
+		this.setState({ store });
+
+	}
+
+	handleChange(e) {
+
+			console.log('e.target.value', e.target.value)
+
+			const value = e.target.value === '' ? 0 : e.target.value;
+
+
+
+				this.setState({
+						countValue: {
+							...this.state.countValue,
+							[e.target.name]: {
+								value: parseInt(value)
+							}
+						}
+				});
+
+
+		  	  	}
+
+	render() {
 
 		return (
-			<StoreProvider store={store}>
 				<div>
 					<Nav />
 					<Hero />
@@ -72,8 +76,12 @@ class App extends Component {
 						<div className="container-fluid">
 					
 							{ 
-								rows.map((row, i) => {
-									return <div className={`row row-${row.row}`} key={i}><NPSContainer items={row.items} /></div>
+								this.state.rows.map((row, i) => {
+									return (
+									<div className={`row row-${row.row}`} key={i}>
+										<NPSContainer promoters_score={this.state.promoters_score} items={row.items} countValue={this.state.countValue} changeHandler={this.handleChange} />
+									</div>
+									)
 								})
 							} 
 					
@@ -81,8 +89,7 @@ class App extends Component {
 					</section>
 					<Footer />
 				</div>
-			</StoreProvider>
-		)
+		);
 	}
 }
 

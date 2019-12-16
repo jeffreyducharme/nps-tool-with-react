@@ -12,7 +12,7 @@ class TotalsContainer extends React.Component {
 					<div className="calc-input-container">
 					{ 
 						this.props.boxes.map((box, i) => {
-							return <TotalsBox key={i} box={box} />
+							return <TotalsBox index={this.props.index} countValue={this.props.countValue} key={i} box={box} />
 						})	
 					} 
 					</div>
