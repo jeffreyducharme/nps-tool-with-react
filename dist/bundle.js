@@ -46571,7 +46571,6 @@ function (_Component) {
   }, {
     key: "handleChange",
     value: function handleChange(e) {
-      console.log('e.target.value', e.target.value);
       var value = e.target.value === '' ? 0 : e.target.value;
       this.setState({
         countValue: _objectSpread({}, this.state.countValue, _defineProperty({}, e.target.name, {
@@ -46644,8 +46643,8 @@ var CalcBox = function CalcBox(_ref) {
     value = countValue[name].value;
   }
 
-  if (value === 0) {
-    value = "";
+  if (value === 0 || isNaN(value)) {
+    value = 0;
   }
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -46654,8 +46653,7 @@ var CalcBox = function CalcBox(_ref) {
     className: "boxText"
   }, text), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
     type: type,
-    name: name //id={`${b.id}`}
-    ,
+    name: name,
     value: value,
     onChange: function onChange(e) {
       return changeHandler(e, name);
@@ -47227,6 +47225,10 @@ function ResponseBox(props) {
     value = props.countValue['box-6'].value + props.countValue['box-5'].value + props.countValue['box-4'].value + props.countValue['box-3'].value + props.countValue['box-2'].value + props.countValue['box-1'].value + props.countValue['box-0'].value;
   }
 
+  if (isNaN(value)) {
+    value = '';
+  }
+
   var b = props.box;
   var name = b.name;
   var type = b.type;
@@ -47237,8 +47239,7 @@ function ResponseBox(props) {
     className: "boxText"
   }, text), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
     type: "".concat(type),
-    name: "".concat(name) //id={`${b.id}`}
-    ,
+    name: "".concat(name),
     className: "border-radius",
     value: value,
     disabled: true

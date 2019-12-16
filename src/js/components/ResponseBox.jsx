@@ -22,6 +22,10 @@ function ResponseBox(props) {
 				props.countValue['box-0'].value
 	}
 
+	if (isNaN(value)) {
+		value = '';
+	}
+
 
 	const b = props.box 
 
@@ -35,7 +39,6 @@ function ResponseBox(props) {
 			<input 
 				type={`${type}`}
 				name={`${name}`}
-				//id={`${b.id}`}
 				className="border-radius"
 				value={value} 
 				disabled

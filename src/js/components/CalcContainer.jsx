@@ -12,7 +12,12 @@ class CalcContainer extends React.Component {
 					<div className="calc-input-container">
 					{ 
 						this.props.boxes.map((box, i) => {
-							return <CalcBox countValue={this.props.countValue} key={i} box={box} changeHandler={this.props.changeHandler} />
+							return <CalcBox 
+										countValue={this.props.countValue} 
+										key={i} 
+										box={box} 
+										changeHandler={this.props.changeHandler} 
+									/>
 						})	
 					} 
 					</div>

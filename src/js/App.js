@@ -46,11 +46,7 @@ class App extends Component {
 
 	handleChange(e) {
 
-			console.log('e.target.value', e.target.value)
-
 			const value = e.target.value === '' ? 0 : e.target.value;
-
-
 
 				this.setState({
 						countValue: {
@@ -60,7 +56,6 @@ class App extends Component {
 							}
 						}
 				});
-
 
 		  	  	}
 
