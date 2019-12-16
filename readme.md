@@ -2,5 +2,6 @@ Some React code from a php and jquery developer. I had a lot of great learning o
 
 Live Demo: https://nps.jeffreyducharme.com/
 
-Built w/: React, Easy Peasy state management (minimal), Webpack, Webpack dev server, SCSS, and love.
+Built w/: React, Easy Peasy state management (minimal), Webpack, Webpack dev server, Bootstrap, SCSS, and love.
 
+The NPS tool itself is styled mostly with CSS grid, not bootstrap grid. 
